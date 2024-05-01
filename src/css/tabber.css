@@ -1,0 +1,38 @@
+.tabber {
+    display: flex;
+    flex-direction: column;
+}
+
+.tabber__tabs {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.tabber__tab {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease-out;
+    display: flex;
+    align-items: center;
+}
+
+.tabber__tab.is-selected {
+    background-color: #555;
+}
+
+.tabber__tab:hover {
+    background-color: #444;
+}
+
+.tabber__icon {
+    margin-right: 5px;
+}
+
+.tabber__content {
+    padding: 20px;
+}

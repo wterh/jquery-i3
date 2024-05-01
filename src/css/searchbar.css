@@ -1,0 +1,25 @@
+.searchbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.searchbar__input {
+    flex-grow: 1;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.searchbar__icon {
+    position: absolute;
+    right: 10px;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+}

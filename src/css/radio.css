@@ -1,0 +1,26 @@
+.radio {
+    display: none;
+}
+
+.radio-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.radio-item {
+    cursor: pointer;
+}
+
+.radio-item.is-checked {
+    font-weight: bold;
+}
+
+.radio-inline {
+    display: flex;
+    align-items: center;
+}
+
+.radio-inline .radio-item {
+    margin-right: 10px;
+}

@@ -1,0 +1,20 @@
+.segmented-control {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.segmented-control__item {
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out;
+}
+
+.segmented-control__item.is-selected {
+    background-color: #333;
+    color: #fff;
+}

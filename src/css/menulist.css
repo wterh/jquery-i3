@@ -1,0 +1,32 @@
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list__item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu-list__item:hover {
+    background-color: #f5f5f5;
+}
+
+.menu-list__icon {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.menu-list__label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.menu-list__subtitle {
+    font-size: 14px;
+    color: #777;
+    margin-top: 5px;
+}

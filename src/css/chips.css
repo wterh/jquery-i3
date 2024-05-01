@@ -1,0 +1,48 @@
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chips__item {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 16px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.chips__item--outline {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: #333;
+}
+
+.chips__item--contact {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.chips__content {
+    margin-right: 8px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.chips__delete-btn {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.chips__item--deletable .chips__delete-btn {
+    display: none;
+}
+
+.chips__item--deletable:hover .chips__delete-btn {
+    display: inline-block;
+}

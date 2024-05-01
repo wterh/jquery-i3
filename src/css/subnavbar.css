@@ -1,0 +1,23 @@
+.subnavbar {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+.subnavbar__item {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease-out;
+}
+
+.subnavbar__item.is-selected {
+    background-color: #555;
+}
+
+.subnavbar__item:hover {
+    background-color: #444;
+}

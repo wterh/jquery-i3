@@ -1,0 +1,56 @@
+.messages {
+    position: relative;
+    height: 400px;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+}
+
+.messages__chat {
+    padding: 10px;
+}
+
+.messages__message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.messages__message--self {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.messages__message--other {
+    background-color: #f8dcf1;
+    align-self: flex-start;
+}
+
+.messages__form {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.messages__input {
+    flex-grow: 1;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.messages__send {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

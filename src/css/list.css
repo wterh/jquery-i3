@@ -1,0 +1,23 @@
+.js-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.js-list__item {
+    padding: 0.5em 1em;
+}
+
+.js-list__item:hover {
+    background-color: #f5f5f5;
+}
+
+.js-list__link {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.js-list__link:hover {
+    color: #007bff;
+}

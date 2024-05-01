@@ -1,0 +1,25 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    transition: padding 0.3s ease-out, background-color 0.3s ease-out;
+}
+
+.navbar--small {
+    padding: 5px 10px;
+}
+
+.navbar--medium {
+    padding: 10px 20px;
+}
+
+.navbar--large {
+    padding: 20px 40px;
+}
+
+.navbar.is-sticky {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

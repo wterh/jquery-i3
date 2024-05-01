@@ -1,0 +1,58 @@
+.popover {
+    position: absolute;
+    z-index: 9999;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 200px;
+    padding: 10px;
+}
+
+.popover__arrow {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+
+.popover__arrow--top {
+    bottom: -5px;
+    left: 50%;
+    transform: rotate(45deg) translateX(-50%);
+}
+
+.popover__arrow--bottom {
+    top: -5px;
+    left: 50%;
+    transform: rotate(-135deg) translateX(-50%);
+}
+
+.popover__arrow--left {
+    top: 50%;
+    right: -5px;
+    transform: rotate(-45deg) translateY(-50%);
+}
+
+.popover__arrow--right {
+    top: 50%;
+    left: -5px;
+    transform: rotate(135deg) translateY(-50%);
+}
+
+.popover__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popover__item {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.popover__item:hover {
+    background-color: #f5f5f5;
+}
