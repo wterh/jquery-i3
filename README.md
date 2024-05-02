@@ -12,7 +12,42 @@
 > 
 > Используемый механизм реактивности может быть не полным\не полноценным, а конечная реализация проседать по перфомансам и прочим бенчмаркам, в т.ч.
 > в случае, если Вы захотите использовать проект в собственных прототипах или коленочных решениях.
+## Navigation
+- [Badge](#badge)
+- [Breadcrumbs](#breadcrumbs)
+- [Chips](#chips)
+- [Contact List](#contact-list)
+- [Content Block](#content-block)
+- [Data Tables](#data-tables)
+- [Dialog](#dialog)
+- [FAB (Floating Action Button)](#fab-floating-action-button)
+- [Form Inputs](#form-inputs)
+- [List](#list)
+- [List Button](#list-button)
+- [Menu List](#menu-list)
+- [Messages](#messages)
+- [Navbar](#navbar)
+- [Notification](#notification)
+- [Side Panel](#side-panel)
+- [Popover](#popover)
+- [Popup](#popup)
+- [Preloader](#preloader)
+- [Progressbar](#progressbar)
+- [Radio](#radio)
+- [Range Slider](#range-slider)
+- [Reactive](#reactive)
+- [Searchbar](#searchbar)
+- [Segmented Control](#segmented-control)
+- [Sheet Modal](#sheet-modal)
+- [Stepper](#stepper)
+- [Subnavbar](#subnavbar)
+- [Tabber](#tabber)
+- [Toast](#toast)
+- [Toggle](#toggle)
+- [Toolbar](#toolbar)
 ## Badge
+Бейдж - предназначен для добавления меток на кнопки\ссылки.
+Например, чтобы показать наличие новых уведомлений, на соответствующей кнопке
 ### Params
 - content - содержимое бейджа
 - type - цветовой тип бейджа
@@ -26,6 +61,8 @@ $(function () {
 })
 ```
 ## Breadrcrumbs
+Хлебные крошки - используется для генерации хлебных крошек, отображающих
+глубину просмотра, с возможностью быстро подняться выше
 ### Params
 - items - массив крошек
 - text - лейбл крошки
@@ -44,6 +81,7 @@ $(function () {
 })
 ```
 ## Chips
+Кусочки - дополнительные метки\теги для блоков, кнопок, список и т.д.
 ### Params
 - chips - массив кусочков
 - content - текст кусочка
@@ -67,6 +105,7 @@ $(function () {
 })
 ```
 ## Contact List
+Список контактов - список, содержащий упорядоченные по алфавиту контакты
 ### Params
 - contacts - массив контактов
 ### Example
@@ -82,6 +121,7 @@ $(function () {
 })
 ```
 ## Content Block
+Блок контента - простой блок контента содержащий текст или медиа
 ### Params
 - type - тип блока, на всю ширину родителя, с рамкой, с отступом и рамкой, с заголовком, с подвалом, с заголовком и подвалом
 - header - содержимое заголовка
@@ -99,6 +139,8 @@ $(function () {
 })
 ```
 ## Data Tables
+Таблицы - простые таблицы, с возможностью использования dataTables.js
+(не включен в поставку, не является зависимостью)
 ### Params
 - columns - массив колонок
 - title - заголовое колонки
@@ -125,6 +167,7 @@ $(function () {
 })
 ```
 ## Dialog
+Диалоговое окно - аналогичто модальным окнам
 ### Params
 - content - содержимое окна
 - buttons - массив кнопок
@@ -151,6 +194,7 @@ $(function () {
 })
 ```
 ## FAB (Floating Action Button)
+Плавающая кнопка - предназначена для размещения кнопки, например для загрузки файлов или создания постов
 ### Params
 - ariaLabel - описание кнопки для экранного диктора
 - icon - иконка
@@ -170,6 +214,7 @@ $(function () {
 })
 ```
 ## Form Inputs
+Генератор полей - генерирует поля для форм
 ### Params
 - type - тип поля, outline, floating, outline-floating и т.д.
 - label - лейбл поля
@@ -213,6 +258,7 @@ $(function () {
 })
 ```
 ## List
+Список - простой список ссылок
 ### Params
 - items - массив элементов
 - text - текст элемента
@@ -230,6 +276,7 @@ $(function () {
 })
 ```
 ## List Button
+Список кнопок - простой список кнопок
 ### Params
 - toggleText - подпись для раскрываемого меню
 - items - массив элементов списка кнопок
@@ -249,6 +296,7 @@ $(function () {
 })
 ```
 ## Menu List
+Список элементов меню - простое меню с возможностью добавить иконки и подпись
 ### Params
 - items - массив элементов меню
 - icon - иконка элемента
@@ -284,6 +332,7 @@ $(function () {
 })
 ```
 ## Messages
+Мессенджер - компонент отображения чата или сообщений по шаблону
 ### Params
 - onSend - событие отображения сообщений
 ### Example
@@ -300,6 +349,7 @@ $(function () {
 })
 ```
 ## Navbar
+Панель навигации - Простая панель навигации
 ### Params
 - size - размер Navbar'а small,medium,large
 - sticky - Прилипать ли при прокрутке
@@ -313,6 +363,7 @@ $(function () {
 })
 ```
 ## Notification
+Уведомления - простые уведомления, аналогичные пуш-уведомлениям, на мобильных устройствах
 ### Params
 - message - текст уведомления
 - showCloseButton - показывать кнопку закрытия
@@ -338,6 +389,7 @@ $(function () {
 })
 ```
 ## Side Panel
+Боковая панель - простая боковая панель, с возможностью указать сторону появления
 ### Params
 - alignment - положение слева\справа
 - onClose - событие закрытия
@@ -357,6 +409,7 @@ $(function () {
 })
 ```
 ## Popover
+Подсказка - всплывающая подсказка на элементах в тексте
 ### Params
 - content - список содержимого
 - placement - положение
@@ -374,6 +427,7 @@ $(function () {
 })
 ```
 ## Popup
+Попап - простое попап окно
 ### Params
 - content - Содержимое попапа
 - onClose - событие обратного вызова
@@ -393,6 +447,7 @@ $(function () {
 })
 ```
 ## Preloader
+Прелоадер - простой прелоадер с таймером
 ### Params
 - timeout - таймер скрытия
 - onHide - событие обратного вызова
@@ -408,6 +463,7 @@ $(function () {
 })
 ```
 ## Progressbar
+Панель прогресса - простая панель, для отображения прогресса
 ### Params
 ### Example
 ```javascript
@@ -425,6 +481,7 @@ $(function () {
 })
 ```
 ## Radio
+Радио - простой список связанных элементов
 ### Params
 - name - Имя списка radio элементов
 - layout - Тип inline\list
@@ -450,6 +507,7 @@ $(function () {
 })
 ```
 ## Range Slider
+Слайдер диапазона - простой слайдер диапазона велечин
 ### Params
 - min - минимальное значение
 - max - максимальное значение
@@ -468,7 +526,36 @@ $(function () {
     })
 })
 ```
+## Reactive
+Реактивность - простая реализация реактивности
+### Params
+- data - объект данных, за которыми необходимо следить
+- template - анонимная функция-шаблон
+- callback - событие обратного вызова при изменении элемента
+### Example
+```javascript
+$(function () {
+    // Define the data
+    let data = {
+        message: 'Hello, world!'
+    };
+
+    // Define the template function
+    let template = function(data) {
+        return '<p>' + data.message + '</p>';
+    };
+
+    // Use the plugin to bind the data and the template to an element
+    $('#myElement').i3Reactivity(data, template, function(newData) {
+        console.log('The data has changed:', newData);
+    });
+
+    // Change the data
+    data.message = 'Hello, jQuery!';
+});
+```
 ## Searchbar
+Панель поиска - простая поисковая строка
 ### Params
 - placeholder - Подсказка поисковой строки
 - onSearch - обработчик поиска
@@ -494,6 +581,7 @@ $(function () {
 })
 ```
 ## Segmented Control
+Панель сегментов - простая панель сегментов, может служить табами или переходами панелей
 ### Params
 - items - элементы
 ### Example
@@ -509,6 +597,7 @@ $(function () {
 })
 ```
 ## Sheet Modal
+Модальный лист - простое модальное окно, открываемое снизу
 ### Params
 - content - содержимое модального окна
 - onClose - событие закрытия модального окна
@@ -528,11 +617,12 @@ $(function () {
 })
 ```
 ## Stepper
+Поле шага - простое поле счетчик, например для кол-ва товаров в корзине
 ### Params
 - min - минимальное значение
 - max - максимальное значение
 - value - текущее значение
-- step - текущий шаг
+- step - шаг значения
 - onChange - обработчик изменения
 ### Example
 ```javascript
@@ -549,6 +639,7 @@ $(function () {
 })
 ```
 ## Subnavbar
+Панель поднавигации - простая дополнительная панель навигации
 ### Params
 - items - список элементов
 - selectedIndex - индекст активного элемента
@@ -566,6 +657,7 @@ $(function () {
 })
 ```
 ## Tabber
+Панель табов - простая панель табов
 ### Params
 - items - массив элементов
 - icon - класс иконки
@@ -594,6 +686,7 @@ $(function () {
 })
 ```
 ## Toast
+Тост - простые уведомления, в нижней части экрана
 ### Params
 - message - текст сообщения
 - type - тип сообщения
@@ -617,6 +710,7 @@ $(function () {
 })
 ```
 ## Toggle
+Переключатель - простой переключатель вкл\выкл
 ### Params
 ### Example
 ```javascript
@@ -630,6 +724,7 @@ $(function () {
 })
 ```
 ## Toolbar
+Панель инструментов - простая дополнительная панель
 ### Params
 - alignment - положение сверху\снизу
 - buttons - кноки внутри
