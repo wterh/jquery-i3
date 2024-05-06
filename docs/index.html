@@ -54,6 +54,8 @@
         .navbar ul {
             margin: 0;
             padding: 0;
+            max-height: calc(100vh - 113px);
+            overflow-y: auto;
         }
 
         .navbar li {
@@ -79,9 +81,11 @@
 
         .body {
             width: 70%;
+            max-height: calc(100vh - 71px);
+            overflow-y: auto;
         }
 
-        .navbar li:before {
+        .navbar li a:before {
             content: '¶';
             position: absolute;
             top: 50%;
@@ -90,10 +94,28 @@
             color: #eb264d;
         }
 
+        .navbar li p {
+            background: #333;
+            margin: 0;
+            padding: .5rem 1.5rem;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
         .navbar h2 {
             margin: 0;
             padding: .5rem 1.5rem;
             background: #222;
+        }
+
+        .subtitle {
+            margin: 1.5rem;
+            background: #fff;
+            padding: 1rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #000;
         }
 
         .item {
@@ -155,9 +177,9 @@
 <div class="wrap">
     <div class="header">
         <div class="brand">
-            <h1>jQuery i3-UI</h1>
+            <h1>jQuery i3 UI</h1>
         </div>
-        <a href="https://choosealicense.com/licenses/gpl-3.0/">GPLv3</a>
+        <a href="https://choosealicense.com/licenses/gpl-3.0/">License GPLv3</a>
         <form>
             <label>
                 <input type="search" placeholder="Find method">
@@ -175,7 +197,7 @@
                 <li><a href="#content-block">Content Block</a></li>
                 <li><a href="#data-tables">Data Tables</a></li>
                 <li><a href="#dialog">Dialog</a></li>
-                <li><a href="#fab-floating-action-button">FAB (Floating Action Button)</a></li>
+                <li><a href="#fab">FAB (Floating Action Button)</a></li>
                 <li><a href="#form-inputs">Form Inputs</a></li>
                 <li><a href="#list">List</a></li>
                 <li><a href="#list-button">List Button</a></li>
@@ -200,38 +222,30 @@
                 <li><a href="#toast">Toast</a></li>
                 <li><a href="#toggle">Toggle</a></li>
                 <li><a href="#toolbar">Toolbar</a></li>
+                <li><a href="#theme-switcher">Theme Switcher</a></li>
             </ul>
-            <div class="footer">
-                &copy; WTERH 2024
-            </div>
         </div>
         <div class="body">
             <blockquote>
                 <strong>Disclaimer!</strong>
-                <p>Автор проекта <a href="https://github.com/wterh">WTERH</a>, заранее сообщаю, что большая часть кода
-                    была
-                    сгенерирована с помощью нейронной сети - <a href="https://mistral.ai">Mistral</a>.</p>
-                <p>Автор оставляет за собой право вносить изменения так же прибегая к помощи других неронных сетей.</p>
-                <p>Проект не претендует на какие-либо привелегии, признание, участие сообщества jQuery разработчиков в
-                    развитии
-                    проекта.</p>
+                <p>Большая часть кода была сгенерирована с помощью нейронной сети - <a href="https://mistral.ai">Mistral</a>.</p>
+                <p>Автор оставляет за собой право вносить изменения так же прибегая к помощи не только упомянутой, но и других неронных сетей.</p>
+                <p>Проект не претендует на что-либо и является в лучшем случае "велосипедом" или "костылем".</p>
                 <p>Автор реализовал требуемую логику исключительно для собственных нужд и прототипирования интерфейсов
-                    "на
-                    коленке".</p>
+                    "на коленке".</p>
                 <p>Используемый механизм реактивности может быть не полным\не полноценным, а конечная реализация
-                    проседать
-                    по
-                    перфомансам и прочим бенчмаркам, в т.ч. в случае, если Вы захотите использовать проект в собственных
-                    прототипах
-                    или коленочных решениях.</p>
+                    проседать по перфомансам и прочим бенчмаркам, в т.ч. Учитывайте это, если захотите использовать проект.</p>
             </blockquote>
+            <p class="subtitle">Elements</p>
             <div class="item">
                 <h2 id="badge">Badge</h2>
                 Бейдж - предназначен для добавления меток на кнопки\ссылки.
                 Например, чтобы показать наличие новых уведомлений, на соответствующей кнопке
                 <h3>Params</h3>
-                - content - содержимое бейджа
-                - type - цветовой тип бейджа
+                <ul>
+                    <li><code>content</code> - содержимое бейджа</li>
+                    <li><code>type</code> - цветовой тип бейджа</li>
+                </ul>
                 <h3>Example</h3>
                 <pre><code class="language-js">$(function () {
     const badge = $('#badge').i3Badge({
@@ -241,7 +255,7 @@
 })</code></pre>
             </div>
             <div class="item">
-                <h2 id="breadrcrumbs">Breadrcrumbs</h2>
+                <h2 id="breadcrumbs">Breadrcrumbs</h2>
                 Хлебные крошки - используется для генерации хлебных крошек, отображающих
                 глубину просмотра, с возможностью быстро подняться выше
                 <h3>Params</h3>
@@ -288,6 +302,7 @@
     })
 })</code></pre>
             </div>
+            <p class="subtitle">Lists</p>
             <div class="item">
                 <h2 id="contact-list">Contact List</h2>
                 Список контактов - список, содержащий упорядоченные по алфавиту контакты
@@ -306,6 +321,86 @@
     })
 })</code></pre>
             </div>
+            <div class="item">
+                <h2 id="list">List</h2>
+                Список - простой список ссылок
+                <h3>Params</h3>
+                <ul>
+                    <li><code>items</code> - массив элементов</li>
+                    <li><code>text</code> - текст элемента</li>
+                    <li><code>href</code> - ссылка элемента</li>
+                </ul>
+                <h3>Example</h3>
+                <pre><code class="language-js">$(function () {
+    const list = $('#myList').i3List({
+        items: [
+            { text: 'Item 1', href: '#' },
+            { text: 'Item 2', href: '#' },
+            { text: 'Item 3', href: '#' },
+        ],
+    })
+})</code></pre>
+            </div>
+            <div class="item">
+                <h2 id="list-button">List Button</h2>
+                Список кнопок - простой список
+                кнопок
+                <h3>Params</h3>
+                <ul>
+                    <li><code>toggleText</code> - подпись для раскрываемого меню</li>
+                    <li><code>items</code> - массив элементов списка кнопок</li>
+                    <li><code>text</code> - лейбл кнокпи</li>
+                    <li><code>href</code> - ссылка кнопки</li>
+                </ul>
+                <h3>Example</h3>
+                <pre><code class="language-js">$(function () {
+    const listButton = $('#myListButton').i3ListButton({
+        toggleText: 'Open Menu',
+        items: [
+            { text: 'Item 1', href: '#' },
+            { text: 'Item 2', href: '#' },
+            { text: 'Item 3', href: '#' },
+        ],
+    })
+})</code></pre>
+            </div>
+            <div class="item">
+                <h2 id="menu-list">Menu List</h2>
+                Список элементов меню - простое меню с возможностью добавить иконки и подпись
+                <h3>Params</h3>
+                <ul>
+                    <li><code>items</code> - массив элементов меню</li>
+                    <li><code>icon</code> - иконка элемента</li>
+                    <li><code>label</code> - лейбл элемента</li>
+                    <li><code>link</code> - ссылка элемента</li>
+                    <li><code>subtitle</code> - подзаголовок элемента</li>
+                    <li><code>onClick</code> - событие клика</li>
+                </ul>
+                <h3>Example</h3>
+                <pre><code class="language-js">$(function () {
+    const menu = $('#menu').i3MenuList({
+        items: [
+            {
+                icon: 'fa fa-home',
+                label: 'Home',
+                link: '/home',
+            },{
+                icon: 'fa fa-cog',
+                label: 'Settings',
+                subtitle: 'Manage your account',
+                onClick: function (index) {
+                    console.log(`Settings clicked: ${index}`)
+                },
+            },{
+                icon: 'fa fa-user',
+                label: 'Profile',
+                subtitle: 'View and edit your profile',
+            },
+        ],
+    })
+})</code></pre>
+            </div>
+            <p class="subtitle">Blocks</p>
             <div class="item">
                 <h2 id="content-block">Content Block</h2>
                 Блок контента - простой блок контента содержащий текст или медиа
@@ -330,6 +425,149 @@
 })</code></pre>
             </div>
             <div class="item">
+                <h2 id="messages">Messages</h2>
+                Мессенджер - компонент отображения чата или сообщений по шаблону
+                <h3>Params</h3>
+                <ul>
+                    <li><code>onSend</code> - событие отображения сообщений</li>
+                </ul>
+                <h3>Example</h3>
+                <pre><code class="language-js">$(function () {
+    const messages = $('#messages').i3Messages({
+        onSend: function (message) {
+            // Simulate a response from another person after 1 second.
+            setTimeout(() => {
+                messages.addMessage('Other person: ' + message, 'other')
+            }, 1000)
+        },
+    })
+})</code></pre>
+            </div>
+            <div class="item">
+                <h2 id="navbar">Navbar</h2>
+                Панель навигации - Простая панель навигации
+                <h3>Params</h3>
+                <ul>
+                    <li><code>size</code> - размер Navbar'а small,medium,large</li>
+                    <li><code>sticky</code> - Прилипать ли при прокрутке</li>
+                </ul>
+                <h3>Example</h3>
+                <pre><code class="language-js">$(function () {
+    const navbar = $('#navbar').i3Navbar({
+        size: 'large',
+        sticky: true,
+    })
+})</code></pre>
+            </div>
+            <div class="item">
+                <h2 id="side-panel">Side Panel</h2>
+                Боковая панель - простая боковая панель, с возможностью указать сторону появления
+                <h3>Params</h3>
+                <ul>
+                    <li><code>alignment</code> - положение слева\справа</li>
+                    <li><code>onClose</code> - событие закрытия</li>
+                </ul>
+                <h3>Example</h3>
+                <pre><code class="language-js">$(function () {
+    const sidePanel = $('#side-panel').i3SidePanel({
+        alignment: 'right',
+        onClose: function () {
+            console.log('Side panel closed')
+        },
+    })
+
+    $('#open-side-panel').on('click', function () {
+        sidePanel.open()
+    })
+})</code></pre>
+            </div>
+            <div class="item">
+                <h2 id="preloader">Preloader</h2>
+                Прелоадер - простой прелоадер с таймером
+                <h3>Params</h3>
+                <ul>
+                    <li><code>timeout</code> - таймер скрытия</li>
+                    <li><code>onHide</code> - событие обратного вызова</li>
+                </ul>
+                <h3>
+                    Example</h3>
+                <pre><code class="language-js">$(function () {
+    const preloader = $('body').i3Preloader({
+        timeout: 1000,
+        onHide: function () {
+            console.log('Preloader hidden')
+        },
+    })
+})</code></pre>
+            </div>
+            <div class="item">
+                <h2 id="segmented-control">Segmented Control</h2>
+                Панель сегментов - простая панель сегментов, может служить табами или переходами панелей
+                <h3>Params</h3>
+                <ul>
+                    <li><code>items</code> - элементы</li>
+                </ul>
+                <h3>
+                    Example</h3>
+                <pre><code class="language-js">$(function () {
+    const segmentedControl = $('#segmented-control').i3SegmentedControl({
+        items: ['Option 1', 'Option 2', 'Option 3'],
+        selectedIndex: 1,
+        onChange: function (index) {
+            console.log(`Selected index: ${index}`)
+        },
+    })
+})</code></pre>
+            </div>
+            <div class="item">
+                <h2 id="subnavbar">Subnavbar</h2>
+                Панель поднавигации - простая дополнительная панель навигации
+                <h3>Params</h3>
+                <ul>
+                    <li><code>items</code> - список элементов</li>
+                    <li><code>selectedIndex</code> - индекст активного элемента</li>
+                    <li><code>onChange</code> - событие изменения</li>
+                </ul>
+                <h3>
+                    Example</h3>
+                <pre><code class="language-js">$(function () {
+    const subnavbar = $('#subnavbar').i3Subnavbar({
+        items: ['Option 1', 'Option 2', 'Option 3'],
+        selectedIndex: 1,
+        onChange: function (index) {
+            console.log(`Selected index: ${index}`)
+        },
+    })
+})</code></pre>
+            </div>
+            <div class="item">
+                <h2 id="toolbar">Toolbar</h2>
+                Панель инструментов - простая дополнительная панель
+                <h3>Params</h3>
+                <ul>
+                    <li><code>alignment</code> - положение сверху\снизу</li>
+                    <li><code>buttons</code> - кноки внутри</li>
+                    <li><code>text</code> - лейбл кнопки</li>
+                    <li><code>icon</code> - иконка кнопки</li>
+                    <li><code>onClick</code> - событие клика</li>
+                </ul>
+                <h3>Example</h3>
+                <pre><code class="language-js">$(function () {
+    const toolbar = $('#toolbar').toolbar({
+        alignment: 'bottom',
+        buttons: [
+            { text: 'Button 1', icon: 'fa fa-home' },
+            { text: 'Button 2', icon: 'fa fa-cog' },
+            { text: 'Button 3', icon: 'fa fa-user' },
+        ],
+        onClick: function (index) {
+            console.log(`Button clicked: ${index}`)
+        },
+    })
+})</code></pre>
+            </div>
+            <p class="subtitle">Elements</p>
+            <div class="item">
                 <h2 id="data-tables">Data Tables</h2>
                 Таблицы - простые таблицы, с возможностью использования dataTables.js
                 (не включен в поставку, не является зависимостью)
@@ -337,7 +575,7 @@
                 <ul>
                     <li><code>columns</code> - массив колонок</li>
                     <li><code>title</code> - заголовое колонки</li>
-                    <li><code>data</code> тип колонки</li>
+                    <li><code>data</code> - тип колонки</li>
                     <li><code>data</code> - строки таблицы</li>
                     <li><code>name</code> - первое поле</li>
                     <li><code>email</code> - второе поле</li>
@@ -416,8 +654,7 @@
                 Генератор полей - генерирует поля для форм
                 <h3>Params</h3>
                 <ul>
-                    <li><code>type</code> - тип поля, outline, floating,</li>
-                    outline-floating и т.д.
+                    <li><code>type</code> - тип поля, outline, floating, outline-floating и т.д.</li>
                     <li><code>label</code> - лейбл поля</li>
                     <li><code>inputType</code> - тип поля</li>
                     <li><code>id</code> - идентификатор</li>
@@ -459,122 +696,6 @@
 })</code></pre>
             </div>
             <div class="item">
-                <h2 id="list">List</h2>
-                Список - простой список ссылок
-                <h3>Params</h3>
-                <ul>
-                    <li><code>items</code> - массив элементов</li>
-                    <li><code>text</code> - текст элемента</li>
-                    <li><code>href</code> - ссылка элемента</li>
-                </ul>
-                <h3>Example</h3>
-                <pre><code class="language-js">$(function () {
-    const list = $('#myList').i3List({
-        items: [
-            { text: 'Item 1', href: '#' },
-            { text: 'Item 2', href: '#' },
-            { text: 'Item 3', href: '#' },
-        ],
-    })
-})</code></pre>
-            </div>
-            <div class="item">
-                <h2 id="list-button">List Button</h2>
-                Список кнопок - простой список
-                кнопок
-                <h3>Params</h3>
-                <ul>
-                    <li><code>toggleText</code> - подпись для</li>
-                    раскрываемого меню
-                    <li><code>items</code> - массив элементов</li>
-                    списка кнопок
-                    <li><code>text</code> - лейбл кнокпи</li>
-                    <li><code>href</code> - ссылка кнопки</li>
-                </ul>
-                <h3>Example</h3>
-                <pre><code class="language-js">$(function () {
-    const listButton = $('#myListButton').i3ListButton({
-        toggleText: 'Open Menu',
-        items: [
-            { text: 'Item 1', href: '#' },
-            { text: 'Item 2', href: '#' },
-            { text: 'Item 3', href: '#' },
-        ],
-    })
-})</code></pre>
-            </div>
-            <div class="item">
-                <h2 id="menu-list">Menu List</h2>
-                Список элементов меню - простое меню с возможностью добавить иконки и подпись
-                <h3>Params</h3>
-                <ul>
-                    <li><code>items</code> - массив элементов меню</li>
-                    <li><code>icon</code> - иконка элемента</li>
-                    <li><code>label</code> - лейбл элемента</li>
-                    <li><code>link</code> - ссылка элемента</li>
-                    <li><code>subtitle</code> - подзаголовок элемента</li>
-                    <li><code>onClick</code> - событие клика</li>
-                </ul>
-                <h3>Example</h3>
-                <pre><code class="language-js">$(function () {
-    const menu = $('#menu').i3MenuList({
-        items: [
-            {
-                icon: 'fa fa-home',
-                label: 'Home',
-                link: '/home',
-            },{
-                icon: 'fa fa-cog',
-                label: 'Settings',
-                subtitle: 'Manage your account',
-                onClick: function (index) {
-                    console.log(`Settings clicked: ${index}`)
-                },
-            },{
-                icon: 'fa fa-user',
-                label: 'Profile',
-                subtitle: 'View and edit your profile',
-            },
-        ],
-    })
-})</code></pre>
-            </div>
-            <div class="item">
-                <h2 id="messages">Messages</h2>
-                Мессенджер - компонент отображения чата или сообщений по шаблону
-                <h3>Params</h3>
-                <ul>
-                    <li><code>onSend</code> - событие отображения сообщений</li>
-                </ul>
-                <h3>Example</h3>
-                <pre><code class="language-js">$(function () {
-    const messages = $('#messages').i3Messages({
-        onSend: function (message) {
-            // Simulate a response from another person after 1 second.
-            setTimeout(() => {
-                messages.addMessage('Other person: ' + message, 'other')
-            }, 1000)
-        },
-    })
-})</code></pre>
-            </div>
-            <div class="item">
-                <h2 id="navbar">Navbar</h2>
-                Панель навигации - Простая панель навигации
-                <h3>Params</h3>
-                <ul>
-                    <li>- size - размер Navbar'а small,medium,large</li>
-                    <li>- sticky - Прилипать ли при прокрутке</li>
-                </ul>
-                <h3>Example</h3>
-                <pre><code class="language-js">$(function () {
-    const navbar = $('#navbar').i3Navbar({
-        size: 'large',
-        sticky: true,
-    })
-})</code></pre>
-            </div>
-            <div class="item">
                 <h2 id="notification">Notification</h2>
                 Уведомления - простые уведомления, аналогичные пуш-уведомлениям, на мобильных устройствах
                 <h3>Params</h3>
@@ -600,28 +721,6 @@
 
     $('#show-notification').on('click', function () {
         notification.show()
-    })
-})</code></pre>
-            </div>
-            <div class="item">
-                <h2 id="side-panel">Side Panel</h2>
-                Боковая панель - простая боковая панель, с возможностью указать сторону появления
-                <h3>Params</h3>
-                <ul>
-                    <li><code>alignment</code> - положение слева\справа</li>
-                    <li><code>onClose</code> - событие закрытия</li>
-                </ul>
-                <h3>Example</h3>
-                <pre><code class="language-js">$(function () {
-    const sidePanel = $('#side-panel').i3SidePanel({
-        alignment: 'right',
-        onClose: function () {
-            console.log('Side panel closed')
-        },
-    })
-
-    $('#open-side-panel').on('click', function () {
-        sidePanel.open()
     })
 })</code></pre>
             </div>
@@ -670,29 +769,12 @@
 })</code></pre>
             </div>
             <div class="item">
-                <h2 id="preloader">Preloader</h2>
-                Прелоадер - простой прелоадер с таймером
-                <h3>Params</h3>
-                <ul>
-                    <li><code>timeout</code> - таймер скрытия</li>
-                    <li><code>onHide</code> - событие обратного вызова</li>
-                </ul>
-                <h3>
-                    Example</h3>
-                <pre><code class="language-js">$(function () {
-    const preloader = $('body').i3Preloader({
-        timeout: 1000,
-        onHide: function () {
-            console.log('Preloader hidden')
-        },
-    })
-})</code></pre>
-            </div>
-            <div class="item">
                 <h2 id="progressbar">Progressbar</h2>
                 Панель прогресса - простая панель, для отображения прогресса
                 <h3>Params</h3>
-                ???
+                <ul>
+                    <li><code>onUpdate</code> - событие изменения прогресса</li>
+                </ul>
                 <h3>Example</h3>
                 <pre><code class="language-js">$(function () {
     const progressbar = $('#progress').i3Progressbar({
@@ -760,38 +842,6 @@
 })</code></pre>
             </div>
             <div class="item">
-                <h2 id="reactive">
-                Reactive</h2>
-                Реактивность - простая реализация реактивности
-                <h3>Params</h3>
-                <ul>
-                    <li><code>data</code> - объект данных, за которыми необходимо следить</li>
-                    <li><code>template</code> - анонимная функция-шаблон</li>
-                    <li><code>callback</code> - событие обратного вызова при изменении элемента</li>
-                </ul>
-                <h3>
-                    Example</h3>
-                <pre><code class="language-js">$(function () {
-    // Define the data
-    let data = {
-        message: 'Hello, world!'
-    };
-
-    // Define the template function
-    let template = function(data) {
-        return '<p>' + data.message + '</p>';
-    };
-
-    // Use the plugin to bind the data and the template to an element
-    $('#myElement').i3Reactivity(data, template, function(newData) {
-        console.log('The data has changed:', newData);
-    });
-
-    // Change the data
-    data.message = 'Hello, jQuery!';
-})</code></pre>
-            </div>
-            <div class="item">
                 <h2 id="searchbar">Searchbar</h2>
                 Панель поиска - простая поисковая строка
                 <h3>Params</h3>
@@ -816,25 +866,6 @@
                     $('#results').append(`<li>${result}</li>`)
                 })
             }
-        },
-    })
-})</code></pre>
-            </div>
-            <div class="item">
-                <h2 id="segmented-control">Segmented Control</h2>
-                Панель сегментов - простая панель сегментов, может служить табами или переходами панелей
-                <h3>Params</h3>
-                <ul>
-                    <li><code>items</code> - элементы</li>
-                </ul>
-                <h3>
-                    Example</h3>
-                <pre><code class="language-js">$(function () {
-    const segmentedControl = $('#segmented-control').i3SegmentedControl({
-        items: ['Option 1', 'Option 2', 'Option 3'],
-        selectedIndex: 1,
-        onChange: function (index) {
-            console.log(`Selected index: ${index}`)
         },
     })
 })</code></pre>
@@ -883,27 +914,6 @@
         step: 2,
         onChange: function (value) {
             console.log(`Stepper value changed: ${value}`)
-        },
-    })
-})</code></pre>
-            </div>
-            <div class="item">
-                <h2 id="subnavbar">Subnavbar</h2>
-                Панель поднавигации - простая дополнительная панель навигации
-                <h3>Params</h3>
-                <ul>
-                    <li><code>items</code> - список элементов</li>
-                    <li><code>selectedIndex</code> - индекст активного элемента</li>
-                    <li><code>onChange</code> - событие изменения</li>
-                </ul>
-                <h3>
-                    Example</h3>
-                <pre><code class="language-js">$(function () {
-    const subnavbar = $('#subnavbar').i3Subnavbar({
-        items: ['Option 1', 'Option 2', 'Option 3'],
-        selectedIndex: 1,
-        onChange: function (index) {
-            console.log(`Selected index: ${index}`)
         },
     })
 })</code></pre>
@@ -969,7 +979,10 @@
                 <h2 id="toggle">Toggle</h2>
                 Переключатель - простой переключатель вкл\выкл
                 <h3>Params</h3>
-                ???
+                <ul>
+                    <li><code>state</code> - состояние вкл\выкл</li>
+                    <li><code>onChange</code> - событие изменения состояния</li>
+                </ul>
                 <h3>Example</h3>
                 <pre><code class="language-js">$(function () {
     const toggle = $('#toggle').i3Toggle({
@@ -980,29 +993,55 @@
     })
 })</code></pre>
             </div>
+            <p class="subtitle">Process</p>
             <div class="item">
-                <h2 id="toolbar">Toolbar</h2>
-                Панель инструментов - простая дополнительная панель
+                <h2 id="reactive">Reactive</h2>
+                Реактивность - простая реализация реактивности
                 <h3>Params</h3>
                 <ul>
-                    <li><code>alignment</code> - положение сверху\снизу</li>
-                    <li><code>buttons</code> - кноки внутри</li>
-                    <li><code>text</code> - лейбл кнопки</li>
-                    <li><code>icon</code> - иконка кнопки</li>
-                    <li><code>onClick</code> - событие клика</li>
+                    <li><code>data</code> - объект данных, за которыми необходимо следить</li>
+                    <li><code>template</code> - анонимная функция-шаблон</li>
+                    <li><code>callback</code> - событие обратного вызова при изменении элемента</li>
                 </ul>
                 <h3>Example</h3>
                 <pre><code class="language-js">$(function () {
-    const toolbar = $('#toolbar').toolbar({
-        alignment: 'bottom',
-        buttons: [
-            { text: 'Button 1', icon: 'fa fa-home' },
-            { text: 'Button 2', icon: 'fa fa-cog' },
-            { text: 'Button 3', icon: 'fa fa-user' },
+    // Define the data
+    let data = {
+        message: 'Hello, world!'
+    };
+
+    // Define the template function
+    let template = function(data) {
+        return '<p>' + data.message + '</p>';
+    };
+
+    // Use the plugin to bind the data and the template to an element
+    $('#myElement').i3Reactivity(data, template, function(newData) {
+        console.log('The data has changed:', newData);
+    });
+
+    // Change the data
+    data.message = 'Hello, jQuery!';
+})</code></pre>
+            </div>
+            <p class="subtitle">Themes</p>
+            <div class="item">
+                <h2 id="theme-switcher">Theme Switcher</h2>
+                Переключатель тем оформления, на случай, если проект предусматривает несколько таковых
+                <h3>Params</h3>
+                <ul>
+                    <li><code>themes</code> - массив css файлов для переключения между темами</li>
+                    <li><code>name</code> - имя темы</li>
+                    <li><code>file</code> - пусть до css файла</li>
+                    <li><code>default</code> - используется поумолчанию</li>
+                </ul>
+                <h3>Example</h3>
+                <pre><code class="language-js">$(function () {
+    $('#themeSwitcher').i3ThemeSwitcher({
+        themes: [
+            { name: 'Light', file: 'light.css', default: true },
+            { name: 'Dark', file: 'dark.css' },
         ],
-        onClick: function (index) {
-            console.log(`Button clicked: ${index}`)
-        },
     })
 })</code></pre>
             </div>
@@ -1010,7 +1049,6 @@
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/js.min.js"></script>-->
 <script>hljs.highlightAll();</script>
 </body>
 </html>
