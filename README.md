@@ -187,7 +187,6 @@ $(function () {
             console.log(`Button ${index} clicked!`)
         },
     })
-
     $('#openDialog').on('click', function () {
         dialogContainer.dialog('open')
     })
@@ -237,14 +236,12 @@ $(function () {
         name: 'outlineInput',
         placeholder: 'Enter outline input',
     })
-
     $('#inputField2').formInputs({
         type: 'floating',
         label: 'Floating Input',
         name: 'floatingInput',
         placeholder: 'Enter floating input',
     })
-
     $('#inputField3').formInputs({
         type: 'outline-floating',
         label: 'Outline Floating Input',
@@ -382,7 +379,6 @@ $(function () {
             console.log('Notification closed')
         },
     })
-
     $('#show-notification').on('click', function () {
         notification.show()
     })
@@ -402,7 +398,6 @@ $(function () {
             console.log('Side panel closed')
         },
     })
-
     $('#open-side-panel').on('click', function () {
         sidePanel.open()
     })
@@ -440,7 +435,6 @@ $(function () {
             console.log('Popup closed')
         },
     })
-
     $('#open-popup').on('click', function () {
         popup.open()
     })
@@ -473,7 +467,6 @@ $(function () {
             console.log(`Progress updated: ${value}%`)
         },
     })
-
     $('#increase').on('click', function () {
         const currentValue = progressbar.options.value
         progressbar.setValue(currentValue + 10)
@@ -539,17 +532,14 @@ $(function () {
     let data = {
         message: 'Hello, world!'
     };
-
     // Define the template function
     let template = function(data) {
         return '<p>' + data.message + '</p>';
     };
-
     // Use the plugin to bind the data and the template to an element
     $('#myElement').i3Reactivity(data, template, function(newData) {
         console.log('The data has changed:', newData);
     });
-
     // Change the data
     data.message = 'Hello, jQuery!';
 });
@@ -568,9 +558,7 @@ $(function () {
         onSearch: function (query) {
             // Perform search with the query and update the results.
             const results = ['Item 1', 'Item 2', 'Item 3'] // Replace this with actual search results.
-
             $('#results').empty()
-
             if (query) {
                 results.forEach((result) => {
                     $('#results').append(`<li>${result}</li>`)
@@ -610,7 +598,6 @@ $(function () {
             console.log('Sheet modal closed')
         },
     })
-
     $('#open-sheet-modal').on('click', function () {
         sheetModal.open()
     })
